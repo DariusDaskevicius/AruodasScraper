@@ -14,8 +14,8 @@ def get_html(url, params=''):
     return request
 
 def save_json(items):
-    with open('flats.json', 'w', newline='', encoding='utf-8') as json_file:
-        json.dump(items, json_file)
+    with open('flats.json', 'w', encoding='utf-8') as json_file:
+        json.dump(items, json_file, indent=4, ensure_ascii=False)
 
 def get_content(html):
     soup = BeautifulSoup(html, 'html.parser')
